@@ -33,12 +33,11 @@ bot.command("labas@avengers_telegram_bot", async ctx => {
 });
 
 bot.command("assemble@avengers_telegram_bot", async ctx => {
-  db.find({})
-    .sort({ user: 1 })
-    .exec(function(err, docs) {
-      docs.forEach(function(d) {
-        console.log(docs);
-      });
-    });
+  console.log("yepey!");
+  var user = ctx.from.username;
+  ctx.reply("ASSEMBLE!");
+  db.find({}, function(err, docs) {
+    console.log("1");
+  });
 });
 bot.startPolling();
