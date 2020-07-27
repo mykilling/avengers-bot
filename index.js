@@ -33,9 +33,14 @@ bot.command("labas@avengers_telegram_bot", async ctx => {
 });
 
 bot.command("assemble@avengers_telegram_bot", async ctx => {
-  db.find({}).sort({user: 1}).exec(function(err, docs) {
-    docs.forEach(function(d) {
-        console.log(d);
-    });
+   db.find({ system: 'solar' }).sort({ planet: -1 }).exec(function (err, docs) {
+    
 });
+});
+  
+  
+  
+  
+  
+})
 bot.startPolling();
