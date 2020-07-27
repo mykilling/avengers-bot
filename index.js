@@ -1,4 +1,4 @@
-const { Telegraf } = require('telegraf');
+const {Telegraf} = require('telegraf');
 const db = require('./db');
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
@@ -24,7 +24,6 @@ bot.command("pasok@Avengers_Telegram_Bot", async (ctx) =>{
   ctx.reply("Salamat sa pag click sa command @" + user);
   await db.remove(user, {multi: true});
   await db.insert(user);
-  userChat = await db.insert(user)
 })
 
 bot.command("labas@Avengers_Telegram_Bot", async (ctx) =>{
