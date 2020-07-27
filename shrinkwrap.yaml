@@ -1,5 +1,8 @@
 dependencies:
   express: 4.17.1
+  nedb: 1.8.0
+  nedb-promises: 4.0.4
+  telegraf: 3.38.0
 packages:
   /accepts/1.3.7:
     dependencies:
@@ -14,6 +17,16 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
+  /async/0.2.10:
+    dev: false
+    resolution:
+      integrity: sha1-trvgsGdLnXGXCMo43owjfLUmw9E=
+  /binary-search-tree/0.2.5:
+    dependencies:
+      underscore: 1.4.4
+    dev: false
+    resolution:
+      integrity: sha1-fbs7IQ/coIJFDa0jNMMErzm9x4Q=
   /body-parser/1.19.0:
     dependencies:
       bytes: 3.1.0
@@ -67,6 +80,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
+  /debug/4.1.1:
+    dependencies:
+      ms: 2.1.2
+    dev: false
+    resolution:
+      integrity: sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
   /depd/1.1.2:
     dev: false
     engines:
@@ -192,6 +211,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==
+  /immediate/3.0.6:
+    dev: false
+    resolution:
+      integrity: sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
   /inherits/2.0.3:
     dev: false
     resolution:
@@ -206,6 +229,18 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-M4Sjn6N/+O6/IXSJseKqHoFc+5FdGJ22sXqnjTpdZweHK64MzEPAyQZyEU3R/KRv2GLoa7nNtg/C2Ev6m7z+eA==
+  /lie/3.1.1:
+    dependencies:
+      immediate: 3.0.6
+    dev: false
+    resolution:
+      integrity: sha1-mkNrLMd0bKWd56QfpGmz77dr2H4=
+  /localforage/1.8.1:
+    dependencies:
+      lie: 3.1.1
+    dev: false
+    resolution:
+      integrity: sha512-azSSJJfc7h4bVpi0PGi+SmLQKJl2/8NErI+LhJsrORNikMZnhaQ7rv9fHj+ofwgSHrKRlsDCL/639a6nECIKuQ==
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -243,6 +278,21 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
+  /minimist/1.2.5:
+    dev: false
+    resolution:
+      integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  /mkdirp/0.5.5:
+    dependencies:
+      minimist: 1.2.5
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
+  /module-alias/2.2.2:
+    dev: false
+    resolution:
+      integrity: sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==
   /ms/2.0.0:
     dev: false
     resolution:
@@ -251,12 +301,38 @@ packages:
     dev: false
     resolution:
       integrity: sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
+  /ms/2.1.2:
+    dev: false
+    resolution:
+      integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+  /nedb-promises/4.0.4:
+    dependencies:
+      nedb: 1.8.0
+    dev: false
+    resolution:
+      integrity: sha512-+z5kzrNOW0rDA1FiCfAtPGR7ZW3mnaOrYZytGAT0TbL6EqoEJUCxAuu9VME4+B1yZNG1gBx61F0c0jcacq1EsQ==
+  /nedb/1.8.0:
+    dependencies:
+      async: 0.2.10
+      binary-search-tree: 0.2.5
+      localforage: 1.8.1
+      mkdirp: 0.5.5
+      underscore: 1.4.4
+    dev: false
+    resolution:
+      integrity: sha1-DjUCzYLABNU1WkPJ5VV3vXvZHYg=
   /negotiator/0.6.2:
     dev: false
     engines:
       node: '>= 0.6'
     resolution:
       integrity: sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
+  /node-fetch/2.6.0:
+    dev: false
+    engines:
+      node: 4.x || >=6.0.0
+    resolution:
+      integrity: sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
   /on-finished/2.3.0:
     dependencies:
       ee-first: 1.1.1
@@ -315,6 +391,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
+  /sandwich-stream/2.0.2:
+    dev: false
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha512-jLYV0DORrzY3xaz/S9ydJL6Iz7essZeAfnAavsJ+zsJGZ1MOnsS52yRjU3uF3pJa/lla7+wisp//fxOwOH8SKQ==
   /send/0.17.1:
     dependencies:
       debug: 2.6.9
@@ -356,6 +438,24 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
+  /telegraf/3.38.0:
+    dependencies:
+      debug: 4.1.1
+      minimist: 1.2.5
+      module-alias: 2.2.2
+      node-fetch: 2.6.0
+      sandwich-stream: 2.0.2
+      telegram-typings: 3.6.1
+    dev: false
+    engines:
+      node: '>=8'
+    hasBin: true
+    resolution:
+      integrity: sha512-va4VlrKWp64JrowFoZX/NPzzA6q38kvaIukVXOWFO1V+jR1G8+hCfgJy4TX8Z3rwLJzwaBEet1QhikHDRZWl3A==
+  /telegram-typings/3.6.1:
+    dev: false
+    resolution:
+      integrity: sha512-njVv1EAhIZnmQVLocZEADYUyqA1WIXuVcDYlsp+mXua/XB0pxx+PKtMSPeZ/EE4wPWTw9h/hA9ASTT6yQelkiw==
   /toidentifier/1.0.0:
     dev: false
     engines:
@@ -371,6 +471,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==
+  /underscore/1.4.4:
+    dev: false
+    resolution:
+      integrity: sha1-YaajIBBiKvoHljvzJSA88SI51gQ=
   /unpipe/1.0.0:
     dev: false
     engines:
@@ -394,3 +498,6 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   express: ^4.17.1
+  nedb: ^1.8.0
+  nedb-promises: ^4.0.4
+  telegraf: ^3.38.0
