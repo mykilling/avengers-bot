@@ -41,7 +41,7 @@ bot.command("assemble@avengers_telegram_bot", async ctx => {
   db.find({}).sort({user: 1}).exec(function(err, docs) {
     docs.forEach(function(d) {
         userChat = Object.values(d);
-        console.log(userChat);
+        console.log(typeof userChat);
     });
 });
 });
