@@ -38,8 +38,10 @@ bot.command("assemble@avengers_telegram_bot", async ctx => {
   console.log("yepey!");
   var user = ctx.from.username;
   ctx.reply("ASSEMBLE!");
-  db.find({}, function(err, docs) {
-    console.log("1");
-  });
+  db.find({}).sort({user: 1}).exec(function(err, docs) {
+    docs.forEach(function(d) {
+        console.log(Object.values(d));
+    });
+});
 });
 bot.startPolling();
