@@ -1,6 +1,6 @@
 const { Telegraf } = require("telegraf");
 
-const Datastore = require('nedb');
+const Datastore = require("nedb");
 var db = new Datastore({ filename: "database", autoload: true });
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
@@ -37,12 +37,14 @@ bot.command("labas@avengers_telegram_bot", async ctx => {
 bot.command("assemble@avengers_telegram_bot", async ctx => {
   var user = ctx.from.username;
   ctx.reply("ASSEMBLE!");
-  db.find({}).sort({user: 1}).exec(function(err, docs) {
-    docs.forEach(function(d) {
-    userChat.push(d.user);
+  db.find({})
+    .sort({ user: 1 })
+    .exec(function(err, docs) {
+      docs.forEach(function(d) {
+        userChat.push("@" + d.user);
+      });
+      ctx.reply(userChat);
+      console.log(userChat);
     });
-  userChat = "@" + userChat;
-  console.log(userChat);
-});
 });
 bot.startPolling();
