@@ -1,5 +1,7 @@
 const { Telegraf } = require("telegraf");
-const db = require("./db");
+
+const Datastore = require('nedb');
+var db = new Datastore({ filename: "database", autoload: true });
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
