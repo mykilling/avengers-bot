@@ -35,12 +35,11 @@ bot.command("labas@avengers_telegram_bot", async ctx => {
 });
 
 bot.command("assemble@avengers_telegram_bot", async ctx => {
-  console.log("yepey!");
   var user = ctx.from.username;
   ctx.reply("ASSEMBLE!");
   db.find({}).sort({user: 1}).exec(function(err, docs) {
     docs.forEach(function(d) {
-        console.log(Object.values(d));
+    ctx.reply("@"+ d.user)
     });
 });
 });
