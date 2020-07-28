@@ -21,20 +21,20 @@ bot.start(ctx => ctx.reply(welcomeMessage));
 
 bot.help(ctx => ctx.reply(helpMessage));
 
-bot.command("pasok@avengers_assemble_bot", async ctx => {
+bot.command("pasok@avengers_telegram_bot", async ctx => {
   var user = ctx.from.username;
   ctx.reply("Salamat sa pag click sa command @" + user);
   await db.remove({ user }, { multi: true });
   await db.insert({ user });
 });
 
-bot.command("labas@avengers_assemble_bot", async ctx => {
+bot.command("labas@avengers_telegram_bot", async ctx => {
   var user = ctx.from.username;
   ctx.reply("Salamat sa lahat! Mamimiss ka namin @" + user);
   await db.remove({ user }, { multi: true });
 });
 
-bot.command("assemble@avengers_assemble_bot", async ctx => {
+bot.command("assemble@avengers_telegram_bot", async ctx => {
   var user = ctx.from.username;
   ctx.reply("ASSEMBLE!");
   db.find({}).sort({user: 1}).exec(function(err, docs) {
