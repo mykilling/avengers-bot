@@ -40,8 +40,7 @@ bot.command("assemble@avengers_telegram_bot", async ctx => {
   ctx.reply("ASSEMBLE!");
   db.find({}).sort({user: 1}).exec(function(err, docs) {
     docs.forEach(function(d) {
-        var x = Object.values(d);
-        console.log(typeof x);
+        console.log(Object.values(d));
     });
 });
 });
