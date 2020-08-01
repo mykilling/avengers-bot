@@ -40,16 +40,18 @@ bot.command("labas@avengers_telegram_bot", async ctx => {
 });
 
 bot.command("assemble@avengers_telegram_bot", async ctx => {
-  var user = ctx.from.username;+
-  ctx.reply("ASSEMBLE!");
-  db.find({})
-    .sort({ user: 1 })
-    .exec(function(err, docs) {
-      docs.forEach(function(d) {
-        userChat.push("@" + d.user);
+  var user = ctx.from.username;
+  if (ctx.message.chat.type != 'private'){  
+    ctx.reply("ASSEMBLE!");
+    db.find({})
+      .sort({ user: 1 })
+      .exec(function(err, docs) {
+        docs.forEach(function(d) {
+          userChat.push("@" + d.user);
+        });
+        ctx.reply(userChat);
+        console.log(userChat);
       });
-      ctx.reply(userChat);
-      console.log(userChat);
-    });
+  }
 });
 bot.startPolling();
