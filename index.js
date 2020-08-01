@@ -23,20 +23,24 @@ bot.help(ctx => ctx.reply(helpMessage));
 
 bot.command("pasok@avengers_telegram_bot", async ctx => {
   var user = ctx.from.username;
-  console.log(ctx.message);
-  ctx.reply("Salamat sa pag click sa command @" + user);
-  await db.remove({ user }, { multi: true });
-  await db.insert({ user });
+  console.log(ctx.message.chat.type);
+  if (ctx.message.chat.type != 'private'){
+    ctx.reply("Salamat sa pag click sa command @" + user);
+    await db.remove({ user }, { multi: true });
+    await db.insert({ user });
+  }
 });
 
 bot.command("labas@avengers_telegram_bot", async ctx => {
   var user = ctx.from.username;
-  ctx.reply("Salamat sa lahat! Mamimiss ka namin @" + user);
-  await db.remove({ user }, { multi: true });
+  if (ctx.message.chat.type != 'private'){
+    ctx.reply("Salamat sa lahat! Mamimiss ka namin @" + user);
+    await db.remove({ user }, { multi: true });
+  }
 });
 
 bot.command("assemble@avengers_telegram_bot", async ctx => {
-  var user = ctx.from.username;
+  var user = ctx.from.username;+
   ctx.reply("ASSEMBLE!");
   db.find({})
     .sort({ user: 1 })
