@@ -23,6 +23,7 @@ bot.help(ctx => ctx.reply(helpMessage));
 
 bot.command("pasok@avengers_telegram_bot", async ctx => {
   var user = ctx.from.username;
+  console.log(ctx.message);
   ctx.reply("Salamat sa pag click sa command @" + user);
   await db.remove({ user }, { multi: true });
   await db.insert({ user });
